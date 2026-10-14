@@ -1,0 +1,109 @@
+/* ============ HEADER ============ */
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  height: var(--header-h);
+  background: rgba(245, 240, 231, .94);
+  border-bottom: 1px solid var(--line);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+.header__inner {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+
+.nav__list {
+  display: flex;
+  gap: 38px;
+}
+
+.nav__link {
+  position: relative;
+  font-family: var(--font-serif);
+  font-size: 1.125rem;
+  color: var(--ink);
+}
+.nav__link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 100%;
+  height: 1px;
+  background: currentColor;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform .35s var(--ease);
+}
+.nav__link:hover::after { transform: scaleX(1); }
+
+.nav__item--mobile { display: none; }
+
+.menu-toggle { display: none; }
+
+/* ---------- Mobile: menu em tela cheia ---------- */
+@media (max-width: 860px) {
+  /* sem backdrop-filter: ele prenderia o menu fixo dentro do header */
+  .header {
+    background: var(--cream);
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+  }
+
+  .menu-toggle {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 9px;
+    width: 52px;
+    height: 44px;
+    margin-right: -6px;
+    padding: 0 6px;
+    position: relative;
+    z-index: 2;
+  }
+  .menu-toggle span {
+    display: block;
+    height: 2px;
+    background: var(--ink);
+    transition: transform .35s var(--ease);
+  }
+  .menu-open .menu-toggle span:first-child { transform: translateY(5.5px) rotate(45deg); }
+  .menu-open .menu-toggle span:last-child { transform: translateY(-5.5px) rotate(-45deg); }
+
+  .nav {
+    position: fixed;
+    inset: var(--header-h) 0 0 0;
+    flex-direction: column;
+    justify-content: center;
+    gap: 48px;
+    padding: 40px var(--gutter) 80px;
+    background: var(--cream);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity .4s var(--ease), visibility .4s;
+  }
+  .menu-open .nav { opacity: 1; visibility: visible; }
+
+  .nav__list {
+    flex-direction: column;
+    align-items: center;
+    gap: 22px;
+  }
+  .nav__item--mobile { display: block; }
+  .nav__link { font-size: 2.25rem; }
+  .nav__cta { display: none; }
+
+  .menu-open { overflow: hidden; }
+}

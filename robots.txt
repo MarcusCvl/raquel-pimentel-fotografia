@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /_design/
+
+Sitemap: https://www.raquelpimentelfotografia.com.br/sitemap.xml

@@ -1,0 +1,239 @@
+/* ============ TRABALHOS ============ */
+.works {
+  padding-top: clamp(88px, 11vw, 150px);
+}
+
+.works__intro { margin-bottom: clamp(56px, 7vw, 96px); }
+
+.works__title {
+  margin-top: 18px;
+  font-size: clamp(2.75rem, 6vw, 5rem);
+  letter-spacing: -0.015em;
+}
+
+.works__lead {
+  margin-top: 16px;
+  font-size: clamp(1.125rem, 1.5vw, 1.375rem);
+  font-weight: 400;
+  color: var(--ink-soft);
+}
+
+/* ---------- Galeria (uma por categoria) ---------- */
+.gallery {
+  --h: 440px;
+  --gap: 20px;
+  position: relative;
+  padding-block: clamp(40px, 5vw, 64px);
+}
+/* linha divisória respeitando a margem lateral */
+.gallery + .gallery::before,
+.works__bridge::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: var(--gutter);
+  right: var(--gutter);
+  border-top: 1px solid var(--line);
+}
+
+/* cada categoria tem sua própria altura: cria ritmo sem perder a consistência */
+.gallery--a { --h: 440px; }
+.gallery--b { --h: 540px; }
+.gallery--c { --h: 380px; }
+.gallery--d { --h: 480px; }
+
+.gallery__head {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 24px;
+  margin-bottom: 28px;
+}
+
+.gallery__title {
+  display: flex;
+  align-items: baseline;
+  gap: 22px;
+  font-size: clamp(2rem, 3.4vw, 2.875rem);
+  color: var(--ink);
+}
+
+.gallery__num {
+  font-size: .55em;
+  font-weight: 400;
+  letter-spacing: 0;
+  color: var(--muted);
+}
+
+.gallery__controls {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-shrink: 0;
+}
+
+.gallery__count {
+  margin-right: 16px;
+  font-size: .875rem;
+  letter-spacing: .04em;
+  font-variant-numeric: tabular-nums;
+  color: var(--ink-soft);
+}
+
+.arrow-btn {
+  display: grid;
+  place-items: center;
+  width: 46px;
+  height: 46px;
+  border: 1px solid var(--muted);
+  border-radius: 50%;
+  color: var(--muted);
+  transition: background-color .3s var(--ease), color .3s var(--ease), opacity .3s;
+}
+.arrow-btn svg {
+  width: 20px;
+  height: 20px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.4;
+}
+.arrow-btn:hover:not(:disabled) { background: var(--navy); border-color: var(--navy); color: var(--cream); }
+.arrow-btn:disabled { opacity: .35; cursor: default; }
+
+/* trilho rolável com snap: funciona com toque, trackpad, teclado e setas */
+.gallery__track {
+  display: flex;
+  align-items: flex-end;
+  gap: var(--gap);
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  overscroll-behavior-x: contain;
+  scrollbar-width: none;
+}
+.gallery__track::-webkit-scrollbar { display: none; }
+
+.shot {
+  flex: 0 0 auto;
+  height: var(--h);
+  scroll-snap-align: start;
+  overflow: hidden;
+  background: var(--ph);
+}
+.shot--portrait  { aspect-ratio: 4 / 5; }
+.shot--landscape { aspect-ratio: 3 / 2; }
+.shot--square    { aspect-ratio: 1 / 1; }
+.shot--wide      { aspect-ratio: 16 / 9; }
+
+.shot img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 1.2s var(--ease);
+}
+.shot:hover img { transform: scale(1.025); }
+
+/* placeholder até as fotos do portfólio chegarem */
+.shot__ph {
+  display: grid;
+  place-items: center;
+  width: 100%;
+  height: 100%;
+  border: 1px solid var(--line);
+  background: var(--ph);
+  font-size: .875rem;
+  letter-spacing: .04em;
+  color: var(--muted);
+}
+
+.gallery__dots {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 22px;
+}
+.gallery__dots span {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--line);
+  transition: background-color .3s var(--ease), transform .3s var(--ease);
+}
+.gallery__dots span.is-active { background: var(--wine); transform: scale(1.15); }
+
+/* ---------- Pausa: fotografia de impacto, de ponta a ponta ---------- */
+.pause {
+  height: clamp(440px, 86svh, 860px);
+  margin-block: clamp(40px, 6vw, 80px);
+  overflow: hidden;
+}
+.pause img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.shot__ph--pause {
+  border: 0;
+  background: linear-gradient(180deg, var(--ph), var(--sand));
+  font-family: var(--font-serif);
+  font-size: 1.25rem;
+}
+.pause + .gallery::before { display: none; }
+
+/* ---------- Passagem para o Sobre ---------- */
+.works__bridge {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 22px;
+  position: relative;
+  padding-block: clamp(64px, 8vw, 112px) clamp(24px, 3vw, 40px);
+  text-align: center;
+}
+.works__bridge p {
+  font-family: var(--font-serif);
+  font-weight: 400;
+  font-size: clamp(1.5rem, 2.6vw, 2.125rem);
+  color: var(--ink);
+}
+/* sem seta: o sublinhado ocupa o texto todo */
+.works__bridge .link-underline { background-size: 100% 1px; }
+
+/* ---------- Tablet ---------- */
+@media (max-width: 1100px) {
+  .gallery--a { --h: 380px; }
+  .gallery--b { --h: 440px; }
+  .gallery--c { --h: 320px; }
+  .gallery--d { --h: 400px; }
+}
+
+/* ---------- Mobile: trilho sangra até a borda e mostra a próxima foto ---------- */
+@media (max-width: 767px) {
+  .gallery { --gap: 12px; }
+
+  .gallery__head {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 14px;
+    margin-bottom: 20px;
+  }
+  .gallery__title { gap: 14px; }
+  .gallery__controls { justify-content: space-between; }
+  .gallery__count { margin-right: auto; }
+  .arrow-btn { width: 40px; height: 40px; }
+
+  .gallery__track {
+    margin-inline: calc(var(--gutter) * -1);
+    padding-inline: var(--gutter);
+    scroll-padding-inline: var(--gutter);
+  }
+
+  /* altura única por categoria; fotos largas são recortadas para caber na tela */
+  .gallery--a { --h: 96vw; }
+  .gallery--b { --h: 80vw; }
+  .gallery--c { --h: 62vw; }
+  .gallery--d { --h: 106vw; }
+  .shot { max-width: 86vw; }
+
+  .pause { height: min(118vw, 640px); }
+}
