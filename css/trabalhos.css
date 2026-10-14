@@ -161,6 +161,25 @@
 }
 .gallery__dots span.is-active { background: var(--wine); transform: scale(1.15); }
 
+/* ---------- Entrada das fotos ----------
+   Quando a categoria aparece na tela, as fotos se revelam uma depois da
+   outra, com o mesmo movimento suave do resto do site. O --i (ordem) vem do main.js */
+.js .gallery .shot {
+  opacity: 0;
+  transform: translateY(24px);
+  transition:
+    opacity .9s var(--ease) calc(var(--i, 0) * 160ms + 150ms),
+    transform .9s var(--ease) calc(var(--i, 0) * 160ms + 150ms);
+}
+.js .gallery.is-visible .shot {
+  opacity: 1;
+  transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .js .gallery .shot { opacity: 1; transform: none; }
+}
+
 /* ---------- Pausa: fotografia de impacto, de ponta a ponta ---------- */
 .pause {
   height: clamp(440px, 86svh, 860px);
