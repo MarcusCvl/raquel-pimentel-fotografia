@@ -5,40 +5,6 @@ const WHATSAPP_MESSAGE = "Olá, Raquel! Vim pelo seu site e gostaria de solicita
 
 document.documentElement.classList.add("js");
 
-/* ============ H1 DO HERO: PALAVRAS EM SEQUÊNCIA ============ */
-// Cada palavra vira uma máscara (.word) com o texto dentro (.word__inner), que sobe
-// para o lugar uma depois da outra. Mantém o <span class="hero__title-line"> do celular.
-const heroTitle = document.querySelector(".hero__title");
-const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-
-if (heroTitle && !reduceMotion) {
-  heroTitle.setAttribute("aria-label", heroTitle.textContent.replace(/\s+/g, " ").trim());
-  let wordIndex = 0;
-
-  const splitWords = (node) => {
-    [...node.childNodes].forEach((child) => {
-      if (child.nodeType === Node.ELEMENT_NODE) return splitWords(child);
-      if (child.nodeType !== Node.TEXT_NODE) return;
-
-      const fragment = document.createDocumentFragment();
-      child.textContent.split(/(\s+)/).forEach((part) => {
-        if (!part) return;
-        if (/^\s+$/.test(part)) return fragment.append(part);
-        const word = document.createElement("span");
-        word.className = "word";
-        word.setAttribute("aria-hidden", "true");
-        word.innerHTML = `<span class="word__inner" style="--w:${wordIndex++}">${part}</span>`;
-        fragment.append(word);
-      });
-      child.replaceWith(fragment);
-    });
-  };
-
-  splitWords(heroTitle);
-  heroTitle.classList.add("is-split");
-  requestAnimationFrame(() => requestAnimationFrame(() => heroTitle.classList.add("is-in")));
-}
-
 /* ============ MENU MOBILE ============ */
 const menuToggle = document.querySelector(".menu-toggle");
 const menu = document.getElementById("menu");

@@ -47,26 +47,6 @@
   color: var(--ink);
 }
 
-/* palavras do H1 sobem uma depois da outra (separadas no main.js) */
-.hero__title .word {
-  display: inline-block;
-  overflow: hidden;
-  vertical-align: top;
-  /* folga para não cortar acentos, "q" e "p" dentro da máscara */
-  padding: .12em 0 .16em;
-  margin: -.12em 0 -.16em;
-}
-.hero__title .word__inner {
-  display: inline-block;
-}
-.hero__title.is-split .word__inner {
-  transform: translateY(110%);
-  transition: transform 1s var(--ease) calc(var(--w, 0) * 110ms + 150ms);
-}
-.hero__title.is-in .word__inner {
-  transform: none;
-}
-
 .hero__subtitle {
   margin-top: 30px;
   font-size: clamp(1.25rem, 1.8vw, 1.625rem);
