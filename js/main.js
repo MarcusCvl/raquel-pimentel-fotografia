@@ -39,6 +39,9 @@ document.querySelectorAll(".gallery").forEach((gallery) => {
 
   const dots = shots.map(() => dotsWrap.appendChild(document.createElement("span")));
 
+  // ordem de entrada das fotos (uma por vez); limite para as que ficam fora da tela não demorarem
+  shots.forEach((shot, i) => shot.style.setProperty("--i", Math.min(i, 5)));
+
   // índices das fotos visíveis (pelo menos 60% dentro do trilho)
   function visibleRange() {
     const box = track.getBoundingClientRect();
@@ -89,6 +92,10 @@ document.querySelectorAll(".gallery").forEach((gallery) => {
   });
 
   window.addEventListener("resize", update);
+  // recalcula o contador depois que as fotos terminam de entrar
+  track.addEventListener("transitionend", (e) => {
+    if (e.target.classList.contains("shot") && e.propertyName === "transform") update();
+  });
   update();
 });
 
