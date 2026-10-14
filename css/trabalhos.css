@@ -162,33 +162,15 @@
 .gallery__dots span.is-active { background: var(--wine); transform: scale(1.15); }
 
 /* ---------- Entrada das fotos ----------
-   Quando a categoria aparece na tela, as fotos entram uma por vez,
-   alternando o lado a cada categoria. --i (ordem) e --dx (distância até
-   a foto 1) vêm do main.js */
-
-/* Pela direita (Pré-wedding e Eventos): cada foto desliza da direita */
+   Quando a categoria aparece na tela, as fotos se revelam uma depois da
+   outra, com o mesmo movimento suave do resto do site. O --i (ordem) vem do main.js */
 .js .gallery .shot {
   opacity: 0;
-  transform: translateX(96px);
+  transform: translateY(24px);
   transition:
-    opacity .8s var(--ease) calc(var(--i, 0) * 130ms + 150ms),
-    transform 1.1s var(--ease) calc(var(--i, 0) * 130ms + 150ms);
+    opacity .9s var(--ease) calc(var(--i, 0) * 160ms + 150ms),
+    transform .9s var(--ease) calc(var(--i, 0) * 160ms + 150ms);
 }
-
-/* Pela esquerda (Casamentos e Ensaios): a foto 1 é a âncora — só aparece,
-   e as seguintes saem de trás dela, abrindo para a direita como um leque */
-.js .gallery--b .shot,
-.js .gallery--d .shot {
-  /* a foto 1 aparece primeiro e por inteiro (600ms); só depois as outras saem de trás dela */
-  --start: calc(min(var(--i, 0), 1) * 600ms + var(--i, 0) * 120ms + 150ms);
-  position: relative;
-  z-index: calc(10 - var(--i, 0));
-  transform: translateX(var(--dx, 0px));
-  transition:
-    opacity .6s var(--ease) var(--start),
-    transform 1.3s var(--ease) var(--start);
-}
-
 .js .gallery.is-visible .shot {
   opacity: 1;
   transform: none;

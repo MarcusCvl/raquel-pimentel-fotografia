@@ -42,12 +42,6 @@ document.querySelectorAll(".gallery").forEach((gallery) => {
   // ordem de entrada das fotos (uma por vez); limite para as que ficam fora da tela não demorarem
   shots.forEach((shot, i) => shot.style.setProperty("--i", Math.min(i, 5)));
 
-  // distância de cada foto até a foto 1 (usada na entrada pela esquerda, com a foto 1 de âncora)
-  function setAnchorOffsets() {
-    shots.forEach((shot) => shot.style.setProperty("--dx", `${shots[0].offsetLeft - shot.offsetLeft}px`));
-  }
-  setAnchorOffsets();
-
   // índices das fotos visíveis (pelo menos 60% dentro do trilho)
   function visibleRange() {
     const box = track.getBoundingClientRect();
@@ -97,7 +91,7 @@ document.querySelectorAll(".gallery").forEach((gallery) => {
     if (e.key === "ArrowLeft") { e.preventDefault(); prev.click(); }
   });
 
-  window.addEventListener("resize", () => { setAnchorOffsets(); update(); });
+  window.addEventListener("resize", update);
   // recalcula o contador depois que as fotos terminam de entrar
   track.addEventListener("transitionend", (e) => {
     if (e.target.classList.contains("shot") && e.propertyName === "transform") update();
