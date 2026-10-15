@@ -215,8 +215,6 @@
   font-size: clamp(1.5rem, 2.6vw, 2.125rem);
   color: var(--ink);
 }
-/* sem seta: o sublinhado ocupa o texto todo */
-.works__bridge .link-underline { background-size: 100% 1px; }
 
 /* ---------- Tablet ---------- */
 @media (max-width: 1100px) {
