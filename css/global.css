@@ -164,6 +164,13 @@ h1, h2, h3 {
 .btn:hover .icon-arrow,
 .link-underline:hover .icon-arrow { transform: translateX(4px); }
 
+/* ícone do WhatsApp (símbolo oficial, Simple Icons CC0), usado no Orçamento e no
+   botão flutuante; o tamanho vem de cada um */
+.icon-wa {
+  flex-shrink: 0;
+  fill: currentColor;
+}
+
 .link-underline {
   display: inline-flex;
   align-items: center;

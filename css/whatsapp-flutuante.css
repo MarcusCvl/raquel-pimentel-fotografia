@@ -1,0 +1,58 @@
+/* ============ WHATSAPP FLUTUANTE ============ */
+.wa-float {
+  position: fixed;
+  right: max(24px, env(safe-area-inset-right));
+  bottom: max(24px, env(safe-area-inset-bottom));
+  z-index: 40;
+  display: grid;
+  place-items: center;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: var(--wine);
+  color: var(--cream);
+  box-shadow: 0 10px 28px rgba(24, 44, 62, .28);
+  isolation: isolate;
+  transition: background-color .4s var(--ease), transform .4s var(--ease), opacity .4s var(--ease), visibility .4s;
+}
+.wa-float .icon-wa { width: 28px; height: 28px; }
+
+/* pulso: um anel vinho que se expande e some, sem parar */
+.wa-float::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  border-radius: 50%;
+  background: var(--wine);
+  animation: wa-pulse 2.4s var(--ease) infinite;
+}
+@keyframes wa-pulse {
+  0%        { transform: scale(1);   opacity: .55; }
+  70%, 100% { transform: scale(1.7); opacity: 0; }
+}
+
+.wa-float:hover { background: var(--wine-hover); transform: scale(1.06); }
+
+/* some quando a seção Orçamento está na tela (o botão grande já está lá) e com o menu aberto */
+.wa-float.is-hidden,
+.menu-open .wa-float {
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(12px) scale(.9);
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .wa-float::before { animation: none; opacity: 0; }
+}
+
+@media (max-width: 767px) {
+  .wa-float {
+    right: max(16px, env(safe-area-inset-right));
+    bottom: max(16px, env(safe-area-inset-bottom));
+    width: 54px;
+    height: 54px;
+  }
+  .wa-float .icon-wa { width: 26px; height: 26px; }
+}

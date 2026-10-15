@@ -45,16 +45,37 @@
   white-space: normal; /* texto longo pode quebrar no celular */
 }
 
-.icon-wa {
-  width: 40px;
-  height: 40px;
-  flex-shrink: 0;
-  fill: none;
-  stroke: currentColor;
-  stroke-width: 1.6;
-  stroke-linejoin: round;
+.btn--whatsapp .icon-wa { width: 30px; height: 30px; }
+
+/* ---------- Localização: Google Maps de Brasília ---------- */
+.quote__location {
+  width: 100%;
+  margin-top: 80px;
+}
+
+.quote__city {
+  margin-top: 12px;
+  font-family: var(--font-serif);
+  font-size: clamp(1.75rem, 3vw, 2.25rem);
+  line-height: 1.1;
+  color: var(--cream);
+}
+
+/* moldura fina em areia, no mesmo espírito da foto do Sobre */
+.quote__map {
+  margin-top: 28px;
+  padding: 10px;
+  border: 1px solid rgba(216, 197, 174, .4);
+}
+.quote__map iframe {
+  display: block;
+  width: 100%;
+  height: clamp(280px, 36vw, 380px);
+  border: 0;
 }
 
 @media (max-width: 767px) {
   .btn--whatsapp { padding: 22px 24px; text-align: left; }
+  .quote__location { margin-top: 64px; }
+  .quote__map { padding: 8px; }
 }

@@ -1,8 +1,3 @@
-/* ============ CONFIGURAÇÃO ============ */
-// TODO: número da Raquel com DDI + DDD, só dígitos (ex.: "5511999999999")
-const WHATSAPP_NUMBER = "";
-const WHATSAPP_MESSAGE = "Olá, Raquel! Vim pelo seu site e gostaria de solicitar um orçamento.";
-
 document.documentElement.classList.add("js");
 
 /* ============ MENU MOBILE ============ */
@@ -99,11 +94,16 @@ document.querySelectorAll(".gallery").forEach((gallery) => {
   update();
 });
 
-/* ============ WHATSAPP ============ */
-document.querySelectorAll("[data-whatsapp]").forEach((link) => {
-  const base = WHATSAPP_NUMBER ? `https://wa.me/${WHATSAPP_NUMBER}` : "https://wa.me/";
-  link.href = `${base}?text=${encodeURIComponent(WHATSAPP_MESSAGE)}`;
-});
+/* ============ WHATSAPP FLUTUANTE ============ */
+// some enquanto a seção Orçamento está na tela, onde o botão grande já cumpre o papel
+const waFloat = document.querySelector(".wa-float");
+const quoteSection = document.getElementById("orcamento");
+
+if (waFloat && quoteSection && "IntersectionObserver" in window) {
+  new IntersectionObserver(([entry]) => {
+    waFloat.classList.toggle("is-hidden", entry.isIntersecting);
+  }, { threshold: 0.25 }).observe(quoteSection);
+}
 
 /* ============ REVELAÇÃO SUAVE NO SCROLL ============ */
 const revealItems = document.querySelectorAll(".reveal");
