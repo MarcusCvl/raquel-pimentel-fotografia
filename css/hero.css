@@ -56,16 +56,8 @@
 
 .hero__actions {
   display: flex;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 24px 44px;
   padding-top: 52px;
   padding-bottom: 72px;
-}
-
-.hero__secondary {
-  color: var(--ink);
-  background-size: 100% 1px;
 }
 
 /* Telas largas e baixas: mantém o título inteiro visível */
@@ -87,13 +79,7 @@
 
   .hero__title { font-size: clamp(4rem, 7.6vw, 5.75rem); }
 
-  /* "Vamos conversar" abaixo do botão principal */
-  .hero__actions {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 26px;
-    padding-top: 44px;
-  }
+  .hero__actions { padding-top: 44px; }
 }
 
 /* ---------- Celular: texto, foto e o botão pousado na base da foto ---------- */
@@ -163,5 +149,4 @@
     color: var(--wine);
     box-shadow: inset 0 0 0 1px var(--wine);
   }
-  .hero__secondary { display: none; }
 }
