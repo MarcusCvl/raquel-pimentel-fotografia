@@ -45,7 +45,7 @@
   white-space: normal; /* texto longo pode quebrar no celular */
 }
 
-.btn--whatsapp .icon-wa { width: 40px; height: 40px; }
+.btn--whatsapp .icon-wa { width: 30px; height: 30px; }
 
 /* ---------- Localização: Google Maps de Brasília ---------- */
 .quote__location {

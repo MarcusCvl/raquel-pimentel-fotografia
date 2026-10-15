@@ -15,7 +15,7 @@
   isolation: isolate;
   transition: background-color .4s var(--ease), transform .4s var(--ease), opacity .4s var(--ease), visibility .4s;
 }
-.wa-float .icon-wa { width: 30px; height: 30px; }
+.wa-float .icon-wa { width: 28px; height: 28px; }
 
 /* pulso: um anel vinho que se expande e some, sem parar */
 .wa-float::before {
@@ -54,5 +54,5 @@
     width: 54px;
     height: 54px;
   }
-  .wa-float .icon-wa { width: 27px; height: 27px; }
+  .wa-float .icon-wa { width: 26px; height: 26px; }
 }
