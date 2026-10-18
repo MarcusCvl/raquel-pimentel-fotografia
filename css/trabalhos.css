@@ -37,7 +37,7 @@
 }
 
 /* cada categoria tem sua própria altura: cria ritmo sem perder a consistência */
-.gallery--a { --h: 440px; }
+.gallery--a { --h: 560px; }
 .gallery--b { --h: 540px; }
 .gallery--c { --h: 380px; }
 .gallery--d { --h: 480px; }
@@ -124,6 +124,7 @@
 .shot--landscape { aspect-ratio: 3 / 2; }
 .shot--square    { aspect-ratio: 1 / 1; }
 .shot--wide      { aspect-ratio: 16 / 9; }
+.shot--tall      { aspect-ratio: 2 / 3; }
 
 .shot img {
   width: 100%;
@@ -227,7 +228,7 @@
 
 /* ---------- Tablet ---------- */
 @media (max-width: 1100px) {
-  .gallery--a { --h: 380px; }
+  .gallery--a { --h: 460px; }
   .gallery--b { --h: 440px; }
   .gallery--c { --h: 320px; }
   .gallery--d { --h: 400px; }
