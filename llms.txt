@@ -1,20 +1,20 @@
 # Raquel Pimentel Fotografia
 
-> Site oficial da fotógrafa Raquel Pimentel, de Brasília – DF. Fotografia de retratos, ensaios fotográficos, pré-wedding, casamentos e eventos, com olhar sensível e editorial. Lema: "Momento que permanece."
+> Site oficial da fotógrafa Raquel Pimentel, de Brasília – DF. Fotografia de retratos, ensaios fotográficos, publicidade, casamentos e eventos, com olhar sensível e editorial. Lema: "Momento que permanece."
 
 Raquel Pimentel cuida de cada etapa, da fotografia à edição: a luz, o enquadramento e a forma de contar a história de quem é fotografado. O orçamento é feito diretamente com ela pelo WhatsApp, a partir do botão "Solicitar orçamento" do site.
 
 ## Páginas
 
 - [Início](https://www.raquelpimentelfotografia.com.br/): apresentação da Raquel e da proposta do trabalho
-- [Trabalhos](https://www.raquelpimentelfotografia.com.br/#trabalhos): portfólio dividido em Pré-wedding, Casamentos, Eventos e Ensaios fotográficos
+- [Trabalhos](https://www.raquelpimentelfotografia.com.br/#trabalhos): portfólio dividido em Publicidade, Casamentos, Eventos e Ensaios fotográficos
 - [Sobre](https://www.raquelpimentelfotografia.com.br/#sobre): quem é a Raquel e como ela trabalha
 - [Orçamento](https://www.raquelpimentelfotografia.com.br/#orcamento): contato pelo WhatsApp para solicitar orçamento
 
 ## Serviços
 
 - Retratos e ensaios fotográficos
-- Pré-wedding
+- Publicidade
 - Casamentos
 - Eventos
 
