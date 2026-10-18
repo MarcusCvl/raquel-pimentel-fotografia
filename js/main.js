@@ -98,14 +98,21 @@ document.querySelectorAll(".gallery").forEach((gallery) => {
 });
 
 /* ============ WHATSAPP FLUTUANTE ============ */
-// some enquanto a seção Orçamento está na tela, onde o botão grande já cumpre o papel
+// some enquanto o botão do hero ou a seção Orçamento estão na tela,
+// onde já existe um botão de contato e o flutuante só atrapalharia
 const waFloat = document.querySelector(".wa-float");
-const quoteSection = document.getElementById("orcamento");
+const waHideZones = [document.querySelector(".hero__actions"), document.getElementById("orcamento")].filter(Boolean);
 
-if (waFloat && quoteSection && "IntersectionObserver" in window) {
-  new IntersectionObserver(([entry]) => {
-    waFloat.classList.toggle("is-hidden", entry.isIntersecting);
-  }, { threshold: 0.25 }).observe(quoteSection);
+if (waFloat && waHideZones.length && "IntersectionObserver" in window) {
+  const visibleZones = new Set();
+  const zoneObserver = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) visibleZones.add(entry.target);
+      else visibleZones.delete(entry.target);
+    });
+    waFloat.classList.toggle("is-hidden", visibleZones.size > 0);
+  }, { threshold: 0.25 });
+  waHideZones.forEach((zone) => zoneObserver.observe(zone));
 }
 
 /* ============ REVELAÇÃO SUAVE NO SCROLL ============ */
