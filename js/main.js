@@ -60,9 +60,12 @@ document.querySelectorAll(".gallery").forEach((gallery) => {
       : `${pad(first + 1)}–${pad(last + 1)} / ${pad(shots.length)}`;
     dots.forEach((dot, i) => dot.classList.toggle("is-active", i === first));
 
-    const maxScroll = track.scrollWidth - track.clientWidth;
+    // "próximo" desativa quando a última foto já está inteira na tela
+    // (com o snap, o scroll nem sempre chega ao máximo exato)
+    const trackRight = track.getBoundingClientRect().right - parseFloat(getComputedStyle(track).paddingRight);
+    const lastRight = shots[shots.length - 1].getBoundingClientRect().right;
     prev.disabled = track.scrollLeft <= 2;
-    next.disabled = track.scrollLeft >= maxScroll - 2;
+    next.disabled = lastRight <= trackRight + 2;
   }
 
   function goTo(index) {
