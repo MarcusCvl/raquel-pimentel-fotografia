@@ -213,7 +213,7 @@
         <header class="gallery__head">
           <h3 class="gallery__title" id="g2-title"><span class="gallery__num">02</span>Casamentos</h3>
           <div class="gallery__controls">
-            <p class="gallery__count" aria-live="polite">01–02 / 06</p>
+            <p class="gallery__count" aria-live="polite">01–03 / 03</p>
             <button class="arrow-btn" type="button" data-dir="-1" aria-label="Fotos anteriores de Casamentos">
               <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14.5 6l-6 6 6 6"/></svg>
             </button>
@@ -223,12 +223,39 @@
           </div>
         </header>
         <div class="gallery__track" tabindex="0" aria-label="Fotos de Casamentos">
-          <figure class="shot shot--wide"><div class="shot__ph">Foto 01</div></figure>
-          <figure class="shot shot--portrait"><div class="shot__ph">Foto 02</div></figure>
-          <figure class="shot shot--portrait"><div class="shot__ph">Foto 03</div></figure>
-          <figure class="shot shot--landscape"><div class="shot__ph">Foto 04</div></figure>
-          <figure class="shot shot--portrait"><div class="shot__ph">Foto 05</div></figure>
-          <figure class="shot shot--portrait"><div class="shot__ph">Foto 06</div></figure>
+          <figure class="shot shot--tall">
+            <picture>
+              <source type="image/webp" srcset="assets/img/portfolio/casamento-entrada-640.webp 640w, assets/img/portfolio/casamento-entrada-1000.webp 1000w"
+                      sizes="(min-width: 768px) 440px, 84vw">
+              <img src="assets/img/portfolio/casamento-entrada-1000.jpg"
+                   srcset="assets/img/portfolio/casamento-entrada-640.jpg 640w, assets/img/portfolio/casamento-entrada-1000.jpg 1000w"
+                   sizes="(min-width: 768px) 440px, 84vw"
+                   width="1000" height="1500" loading="lazy" decoding="async"
+                   alt="Noiva sorridente entrando de braço dado com o noivo, de farda militar, pelo corredor da igreja">
+            </picture>
+          </figure>
+          <figure class="shot shot--tall">
+            <picture>
+              <source type="image/webp" srcset="assets/img/portfolio/casamento-beijo-640.webp 640w, assets/img/portfolio/casamento-beijo-1000.webp 1000w"
+                      sizes="(min-width: 768px) 440px, 84vw">
+              <img src="assets/img/portfolio/casamento-beijo-1000.jpg"
+                   srcset="assets/img/portfolio/casamento-beijo-640.jpg 640w, assets/img/portfolio/casamento-beijo-1000.jpg 1000w"
+                   sizes="(min-width: 768px) 440px, 84vw"
+                   width="1000" height="1500" loading="lazy" decoding="async"
+                   alt="Noivo inclina a noiva para um beijo no altar enquanto os convidados sorriem ao fundo">
+            </picture>
+          </figure>
+          <figure class="shot shot--portrait">
+            <picture>
+              <source type="image/webp" srcset="assets/img/portfolio/casamento-maos-640.webp 640w, assets/img/portfolio/casamento-maos-1000.webp 1000w"
+                      sizes="(min-width: 768px) 440px, 84vw">
+              <img src="assets/img/portfolio/casamento-maos-1000.jpg"
+                   srcset="assets/img/portfolio/casamento-maos-640.jpg 640w, assets/img/portfolio/casamento-maos-1000.jpg 1000w"
+                   sizes="(min-width: 768px) 440px, 84vw"
+                   width="1000" height="1250" loading="lazy" decoding="async"
+                   alt="Em preto e branco, as mãos dos noivos entrelaçadas apoiadas no genuflexório">
+            </picture>
+          </figure>
         </div>
         <div class="gallery__dots" aria-hidden="true"></div>
       </article>

@@ -257,7 +257,7 @@
 
   /* altura única por categoria; fotos largas são recortadas para caber na tela */
   .gallery--a { --h: 96vw; }
-  .gallery--b { --h: 80vw; }
+  .gallery--b { --h: 104vw; }
   .gallery--c { --h: 62vw; }
   .gallery--d { --h: 106vw; }
   .shot { max-width: 86vw; }
