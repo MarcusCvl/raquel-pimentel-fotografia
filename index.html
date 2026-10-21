@@ -17,7 +17,7 @@
   <meta property="og:locale" content="pt_BR">
   <meta property="og:site_name" content="Raquel Pimentel Fotografia">
   <meta property="og:title" content="Raquel Pimentel Fotografia · Momento que permanece.">
-  <meta property="og:description" content="Fotógrafa em Brasília – DF. Retratos, ensaios, publicidade, casamentos e eventos. Fotografias para guardar o que importa.">
+  <meta property="og:description" content="Fotógrafa em Brasília – DF. Retratos, ensaios, publicidade, casamentos e eventos. Fotografia profissional com atenção à composição e ao acabamento de cada imagem.">
   <meta property="og:url" content="https://www.raquelpimentelfotografia.com.br/">
   <meta property="og:image" content="https://www.raquelpimentelfotografia.com.br/assets/img/og-image.jpg">
   <meta property="og:image:width" content="1200">
@@ -121,7 +121,7 @@
       <div class="hero__content container">
         <p class="eyebrow">Raquel Pimentel · Fotografia</p>
         <h1 class="hero__title" id="hero-title"><span class="hero__title-line">Momento que</span> permanece.</h1>
-        <p class="hero__subtitle">Fotografias para guardar o que importa.</p>
+        <p class="hero__subtitle">Fotografia profissional com atenção à composição e ao acabamento de cada imagem.</p>
       </div>
 
       <!-- fora do bloco de texto para, no celular, ficar abaixo da foto -->
@@ -152,8 +152,8 @@
     <section class="works" id="trabalhos" aria-labelledby="works-title">
       <header class="works__intro container reveal">
         <p class="eyebrow">Trabalhos</p>
-        <h2 class="works__title" id="works-title">Histórias que permanecem.</h2>
-        <p class="works__lead">Um pouco do que meu olhar encontra.</p>
+        <h2 class="works__title" id="works-title">Conheça meu trabalho</h2>
+        <p class="works__lead">Explore uma seleção de ensaios e coberturas. Observe os detalhes, a composição e o tratamento das imagens.</p>
       </header>
 
       <!-- 01 · Publicidade -->
@@ -223,17 +223,6 @@
           </div>
         </header>
         <div class="gallery__track" tabindex="0" aria-label="Fotos de Casamentos">
-          <figure class="shot shot--portrait">
-            <picture>
-              <source type="image/webp" srcset="assets/img/portfolio/casamento-maos-640.webp 640w, assets/img/portfolio/casamento-maos-1000.webp 1000w"
-                      sizes="(min-width: 768px) 440px, 84vw">
-              <img src="assets/img/portfolio/casamento-maos-1000.jpg"
-                   srcset="assets/img/portfolio/casamento-maos-640.jpg 640w, assets/img/portfolio/casamento-maos-1000.jpg 1000w"
-                   sizes="(min-width: 768px) 440px, 84vw"
-                   width="1000" height="1250" loading="lazy" decoding="async"
-                   alt="Em preto e branco, as mãos dos noivos entrelaçadas apoiadas no genuflexório">
-            </picture>
-          </figure>
           <figure class="shot shot--tall">
             <picture>
               <source type="image/webp" srcset="assets/img/portfolio/casamento-entrada-640.webp 640w, assets/img/portfolio/casamento-entrada-1000.webp 1000w"
@@ -243,6 +232,17 @@
                    sizes="(min-width: 768px) 440px, 84vw"
                    width="1000" height="1500" loading="lazy" decoding="async"
                    alt="Noiva sorridente entrando de braço dado com o noivo, de farda militar, pelo corredor da igreja">
+            </picture>
+          </figure>
+          <figure class="shot shot--portrait">
+            <picture>
+              <source type="image/webp" srcset="assets/img/portfolio/casamento-maos-640.webp 640w, assets/img/portfolio/casamento-maos-1000.webp 1000w"
+                      sizes="(min-width: 768px) 440px, 84vw">
+              <img src="assets/img/portfolio/casamento-maos-1000.jpg"
+                   srcset="assets/img/portfolio/casamento-maos-640.jpg 640w, assets/img/portfolio/casamento-maos-1000.jpg 1000w"
+                   sizes="(min-width: 768px) 440px, 84vw"
+                   width="1000" height="1250" loading="lazy" decoding="async"
+                   alt="Em preto e branco, as mãos dos noivos entrelaçadas apoiadas no genuflexório">
             </picture>
           </figure>
           <figure class="shot shot--tall">
@@ -260,10 +260,18 @@
         <div class="gallery__dots" aria-hidden="true"></div>
       </article>
 
-      <!-- Pausa: uma única fotografia de impacto, sem texto (usar só uma vez) -->
-      <figure class="pause reveal" aria-label="Fotografia em destaque">
-        <div class="shot__ph shot__ph--pause">Fotografia de destaque</div>
-      </figure>
+      <!-- Passagem: frase sobre a foto da câmera, entre Casamentos e Eventos -->
+      <div class="works__bridge reveal">
+        <picture class="works__bridge-media">
+          <!-- celular: recorte mais fechado; tablet e desktop: recorte panorâmico -->
+          <source media="(max-width: 767px)" type="image/webp" srcset="assets/img/olhar-camera-celular-680.webp">
+          <source media="(max-width: 767px)" srcset="assets/img/olhar-camera-celular-680.jpg">
+          <source type="image/webp" srcset="assets/img/olhar-camera-larga-941.webp">
+          <img src="assets/img/olhar-camera-larga-941.jpg" width="941" height="250"
+               loading="lazy" decoding="async" alt="">
+        </picture>
+        <p>Por trás de cada imagem, existe um olhar.</p>
+      </div>
 
       <!-- 03 · Eventos (ritmo mais horizontal, documental) -->
       <article class="gallery gallery--c container reveal" id="eventos" aria-labelledby="g3-title">
@@ -293,17 +301,6 @@
           </figure>
           <figure class="shot shot--tall">
             <picture>
-              <source type="image/webp" srcset="assets/img/portfolio/evento-show-guitarra-472.webp 472w"
-                      sizes="(min-width: 768px) 360px, 67vw">
-              <img src="assets/img/portfolio/evento-show-guitarra-472.jpg"
-                   srcset="assets/img/portfolio/evento-show-guitarra-472.jpg 472w"
-                   sizes="(min-width: 768px) 360px, 67vw"
-                   width="472" height="708" loading="lazy" decoding="async"
-                   alt="Músico de óculos tocando guitarra diante do microfone em um palco escuro">
-            </picture>
-          </figure>
-          <figure class="shot shot--tall">
-            <picture>
               <source type="image/webp" srcset="assets/img/portfolio/evento-teatro-640.webp 640w, assets/img/portfolio/evento-teatro-1000.webp 1000w"
                       sizes="(min-width: 768px) 360px, 67vw">
               <img src="assets/img/portfolio/evento-teatro-1000.jpg"
@@ -311,6 +308,17 @@
                    sizes="(min-width: 768px) 360px, 67vw"
                    width="1000" height="1500" loading="lazy" decoding="async"
                    alt="Em preto e branco, ator em cena ergue um pão com as duas mãos diante de um cenário de pedra">
+            </picture>
+          </figure>
+          <figure class="shot shot--tall">
+            <picture>
+              <source type="image/webp" srcset="assets/img/portfolio/evento-show-guitarra-472.webp 472w"
+                      sizes="(min-width: 768px) 360px, 67vw">
+              <img src="assets/img/portfolio/evento-show-guitarra-472.jpg"
+                   srcset="assets/img/portfolio/evento-show-guitarra-472.jpg 472w"
+                   sizes="(min-width: 768px) 360px, 67vw"
+                   width="472" height="708" loading="lazy" decoding="async"
+                   alt="Músico de óculos tocando guitarra diante do microfone em um palco escuro">
             </picture>
           </figure>
         </div>
@@ -391,10 +399,10 @@
         <div class="gallery__dots" aria-hidden="true"></div>
       </article>
 
-      <!-- Passagem discreta para o Sobre -->
-      <div class="works__bridge container reveal">
-        <p>Por trás de cada imagem, existe um olhar.</p>
-      </div>
+      <!-- Pausa: uma única fotografia de impacto, sem texto (usar só uma vez) -->
+      <figure class="pause reveal" aria-label="Fotografia em destaque">
+        <div class="shot__ph shot__ph--pause">Fotografia de destaque</div>
+      </figure>
     </section>
 
     <!-- ============ SOBRE ============ -->
@@ -402,7 +410,7 @@
       <div class="about__inner container">
         <header class="about__head reveal">
           <p class="eyebrow">Sobre Raquel</p>
-          <h2 class="about__title" id="about-title"><span class="about__title-line">Um olhar atento</span> <span class="about__title-line">para o seu</span> <span class="about__title-line">momento.</span></h2>
+          <h2 class="about__title" id="about-title"><span class="about__title-line">Sensibilidade</span> <span class="about__title-line">no olhar &amp;</span> <span class="about__title-line">Critério em</span> <span class="about__title-line">cada escolha.</span></h2>
         </header>
 
         <figure class="about__photo reveal">
@@ -418,8 +426,8 @@
         </figure>
 
         <div class="about__text reveal">
-          <p>Sou Raquel Pimentel, fotógrafa. Entre retratos, casamentos e eventos, meu trabalho é criar imagens que ajudem você a guardar o que importa.</p>
-          <p>Da fotografia à edição, o cuidado está em cada escolha: a luz, o enquadramento e a forma de contar a sua história.</p>
+          <p>Sou Raquel Pimentel, fotógrafa. Meu trabalho reúne retratos, ensaios e coberturas de celebrações, com atenção às pessoas e ao contexto de cada fotografia.</p>
+          <p>A escolha da luz, o enquadramento e a edição fazem parte da mesma construção: criar imagens que valorizem quem está diante da câmera, sem perder a identidade de cada trabalho.</p>
           <div class="about__sign">
             <p class="about__motto">Momento que permanece.</p>
           </div>
@@ -431,8 +439,8 @@
     <section class="quote" id="orcamento" aria-labelledby="quote-title">
       <div class="quote__inner container reveal">
         <p class="eyebrow eyebrow--light">Orçamento</p>
-        <h2 class="quote__title" id="quote-title">Seu momento merece permanecer.</h2>
-        <p class="quote__text">Conte o que você imagina. Vamos conversar sobre as fotos do seu momento.</p>
+        <h2 class="quote__title" id="quote-title"><span class="quote__title-line">Vamos planejar</span> <span class="quote__title-line">suas fotos?</span></h2>
+        <p class="quote__text"><span class="quote__text-line">Envie pelo WhatsApp o tipo de ensaio ou evento, a data prevista e o local.</span> <span class="quote__text-line">A partir dessas informações, podemos conversar sobre a proposta para você.</span></p>
         <!-- WhatsApp da Raquel (+55 61 9907-6153) com mensagem pronta -->
         <a class="btn btn--cream btn--whatsapp" href="https://wa.me/556199076153?text=Ol%C3%A1%2C%20Raquel!%20Vim%20pelo%20seu%20site%20e%20gostaria%20de%20solicitar%20um%20or%C3%A7amento%20de%20fotografia." target="_blank" rel="noopener" aria-label="Solicitar orçamento pelo WhatsApp">
           <svg class="icon-wa" viewBox="0 0 24 24" aria-hidden="true">

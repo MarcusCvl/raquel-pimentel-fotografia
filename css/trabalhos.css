@@ -12,6 +12,7 @@
 }
 
 .works__lead {
+  max-width: 52ch;
   margin-top: 16px;
   font-size: clamp(1.125rem, 1.5vw, 1.375rem);
   font-weight: 400;
@@ -26,8 +27,7 @@
   padding-block: clamp(40px, 5vw, 64px);
 }
 /* linha divisória respeitando a margem lateral */
-.gallery + .gallery::before,
-.works__bridge::before {
+.gallery + .gallery::before {
   content: "";
   position: absolute;
   top: 0;
@@ -112,6 +112,10 @@
   scrollbar-width: none;
 }
 .gallery__track::-webkit-scrollbar { display: none; }
+/* quando as fotos cabem na largura, o conjunto fica centralizado; se não couberem,
+   as margens automáticas viram 0 e o trilho rola normalmente a partir da esquerda */
+.gallery__track > .shot:first-child { margin-left: auto; }
+.gallery__track > .shot:last-child  { margin-right: auto; }
 
 .shot {
   flex: 0 0 auto;
@@ -198,32 +202,43 @@
   font-family: var(--font-serif);
   font-size: 1.25rem;
 }
-.pause + .gallery::before { display: none; }
-
-/* ---------- Passagem para o Sobre ---------- */
+/* ---------- Passagem entre Casamentos e Eventos ---------- */
 .works__bridge {
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 22px;
   position: relative;
-  padding-block: clamp(56px, 7vw, 96px);
+  padding: clamp(56px, 7vw, 96px) var(--gutter);
   text-align: center;
+  isolation: isolate;
 }
-/* linha embaixo também: a frase fica emoldurada entre as duas divisórias */
-.works__bridge::after {
+/* foto de ponta a ponta, com zoom na câmera e no olho; o véu vinho garante
+   a leitura da frase em creme */
+.works__bridge-media {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  overflow: hidden;
+  background: var(--wine);
+}
+.works__bridge-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 45%;
+}
+.works__bridge-media::after {
   content: "";
   position: absolute;
-  bottom: 0;
-  left: var(--gutter);
-  right: var(--gutter);
-  border-top: 1px solid var(--line);
+  inset: 0;
+  background: rgba(112, 46, 50, .55);
 }
 .works__bridge p {
   font-family: var(--font-serif);
   font-weight: 400;
   font-size: clamp(1.5rem, 2.6vw, 2.125rem);
-  color: var(--ink);
+  color: var(--cream);
 }
 
 /* ---------- Tablet ---------- */
@@ -263,4 +278,5 @@
   .shot { max-width: 86vw; }
 
   .pause { height: min(118vw, 640px); }
+
 }
