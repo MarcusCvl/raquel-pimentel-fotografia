@@ -26,8 +26,7 @@
   padding-block: clamp(40px, 5vw, 64px);
 }
 /* linha divisória respeitando a margem lateral */
-.gallery + .gallery::before,
-.works__bridge::before {
+.gallery + .gallery::before {
   content: "";
   position: absolute;
   top: 0;
@@ -211,40 +210,30 @@
   align-items: center;
   gap: 22px;
   position: relative;
-  padding-block: clamp(56px, 7vw, 96px);
+  padding: clamp(56px, 7vw, 96px) var(--gutter);
   text-align: center;
   isolation: isolate;
 }
-/* foto de fundo entre as duas divisórias: a câmera fica à esquerda e a foto
-   se dissolve no azul; o véu azul garante a leitura da frase em creme */
+/* foto de ponta a ponta, com zoom na câmera e no olho; o véu azul garante
+   a leitura da frase em creme */
 .works__bridge-media {
   position: absolute;
-  inset: 0 var(--gutter);
+  inset: 0;
   z-index: -1;
   overflow: hidden;
   background: var(--navy);
 }
 .works__bridge-media img {
+  width: 100%;
   height: 100%;
-  width: auto;
-  max-width: none;
-  -webkit-mask-image: linear-gradient(90deg, #000 45%, transparent);
-          mask-image: linear-gradient(90deg, #000 45%, transparent);
+  object-fit: cover;
+  object-position: 50% 45%;
 }
 .works__bridge-media::after {
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(90deg, rgba(24, 44, 62, .2), rgba(24, 44, 62, .6) 40%);
-}
-/* linha embaixo também: a frase fica emoldurada entre as duas divisórias */
-.works__bridge::after {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: var(--gutter);
-  right: var(--gutter);
-  border-top: 1px solid var(--line);
+  background: rgba(24, 44, 62, .55);
 }
 .works__bridge p {
   font-family: var(--font-serif);
@@ -291,6 +280,4 @@
 
   .pause { height: min(118vw, 640px); }
 
-  /* a frase ocupa a largura toda e passa por cima da câmera: véu mais uniforme */
-  .works__bridge-media::after { background: rgba(24, 44, 62, .58); }
 }

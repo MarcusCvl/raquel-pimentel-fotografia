@@ -392,14 +392,14 @@
       </article>
 
       <!-- Passagem discreta para o Sobre -->
-      <div class="works__bridge container reveal">
+      <div class="works__bridge reveal">
         <picture class="works__bridge-media">
-          <source type="image/webp" srcset="assets/img/olhar-camera-640.webp 640w, assets/img/olhar-camera-941.webp 941w"
-                  sizes="(min-width: 768px) 520px, 100vw">
-          <img src="assets/img/olhar-camera-941.jpg"
-               srcset="assets/img/olhar-camera-640.jpg 640w, assets/img/olhar-camera-941.jpg 941w"
-               sizes="(min-width: 768px) 520px, 100vw"
-               width="941" height="460" loading="lazy" decoding="async" alt="">
+          <!-- celular: recorte mais fechado; tablet e desktop: recorte panorâmico -->
+          <source media="(max-width: 767px)" type="image/webp" srcset="assets/img/olhar-camera-celular-680.webp">
+          <source media="(max-width: 767px)" srcset="assets/img/olhar-camera-celular-680.jpg">
+          <source type="image/webp" srcset="assets/img/olhar-camera-larga-941.webp">
+          <img src="assets/img/olhar-camera-larga-941.jpg" width="941" height="250"
+               loading="lazy" decoding="async" alt="">
         </picture>
         <p>Por trás de cada imagem, existe um olhar.</p>
       </div>
