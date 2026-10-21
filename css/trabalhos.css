@@ -112,6 +112,10 @@
   scrollbar-width: none;
 }
 .gallery__track::-webkit-scrollbar { display: none; }
+/* quando as fotos cabem na largura, o conjunto fica centralizado; se não couberem,
+   as margens automáticas viram 0 e o trilho rola normalmente a partir da esquerda */
+.gallery__track > .shot:first-child { margin-left: auto; }
+.gallery__track > .shot:last-child  { margin-right: auto; }
 
 .shot {
   flex: 0 0 auto;
