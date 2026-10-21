@@ -201,9 +201,7 @@
   font-family: var(--font-serif);
   font-size: 1.25rem;
 }
-.pause + .gallery::before { display: none; }
-
-/* ---------- Passagem para o Sobre ---------- */
+/* ---------- Passagem entre Casamentos e Eventos ---------- */
 .works__bridge {
   display: flex;
   flex-direction: column;

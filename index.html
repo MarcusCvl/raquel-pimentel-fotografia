@@ -260,10 +260,18 @@
         <div class="gallery__dots" aria-hidden="true"></div>
       </article>
 
-      <!-- Pausa: uma única fotografia de impacto, sem texto (usar só uma vez) -->
-      <figure class="pause reveal" aria-label="Fotografia em destaque">
-        <div class="shot__ph shot__ph--pause">Fotografia de destaque</div>
-      </figure>
+      <!-- Passagem: frase sobre a foto da câmera, entre Casamentos e Eventos -->
+      <div class="works__bridge reveal">
+        <picture class="works__bridge-media">
+          <!-- celular: recorte mais fechado; tablet e desktop: recorte panorâmico -->
+          <source media="(max-width: 767px)" type="image/webp" srcset="assets/img/olhar-camera-celular-680.webp">
+          <source media="(max-width: 767px)" srcset="assets/img/olhar-camera-celular-680.jpg">
+          <source type="image/webp" srcset="assets/img/olhar-camera-larga-941.webp">
+          <img src="assets/img/olhar-camera-larga-941.jpg" width="941" height="250"
+               loading="lazy" decoding="async" alt="">
+        </picture>
+        <p>Por trás de cada imagem, existe um olhar.</p>
+      </div>
 
       <!-- 03 · Eventos (ritmo mais horizontal, documental) -->
       <article class="gallery gallery--c container reveal" id="eventos" aria-labelledby="g3-title">
@@ -391,18 +399,10 @@
         <div class="gallery__dots" aria-hidden="true"></div>
       </article>
 
-      <!-- Passagem discreta para o Sobre -->
-      <div class="works__bridge reveal">
-        <picture class="works__bridge-media">
-          <!-- celular: recorte mais fechado; tablet e desktop: recorte panorâmico -->
-          <source media="(max-width: 767px)" type="image/webp" srcset="assets/img/olhar-camera-celular-680.webp">
-          <source media="(max-width: 767px)" srcset="assets/img/olhar-camera-celular-680.jpg">
-          <source type="image/webp" srcset="assets/img/olhar-camera-larga-941.webp">
-          <img src="assets/img/olhar-camera-larga-941.jpg" width="941" height="250"
-               loading="lazy" decoding="async" alt="">
-        </picture>
-        <p>Por trás de cada imagem, existe um olhar.</p>
-      </div>
+      <!-- Pausa: uma única fotografia de impacto, sem texto (usar só uma vez) -->
+      <figure class="pause reveal" aria-label="Fotografia em destaque">
+        <div class="shot__ph shot__ph--pause">Fotografia de destaque</div>
+      </figure>
     </section>
 
     <!-- ============ SOBRE ============ -->
