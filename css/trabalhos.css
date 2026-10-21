@@ -214,14 +214,14 @@
   text-align: center;
   isolation: isolate;
 }
-/* foto de ponta a ponta, com zoom na câmera e no olho; o véu azul garante
+/* foto de ponta a ponta, com zoom na câmera e no olho; o véu vinho garante
    a leitura da frase em creme */
 .works__bridge-media {
   position: absolute;
   inset: 0;
   z-index: -1;
   overflow: hidden;
-  background: var(--navy);
+  background: var(--wine);
 }
 .works__bridge-media img {
   width: 100%;
@@ -233,7 +233,7 @@
   content: "";
   position: absolute;
   inset: 0;
-  background: rgba(24, 44, 62, .55);
+  background: rgba(112, 46, 50, .55);
 }
 .works__bridge p {
   font-family: var(--font-serif);
