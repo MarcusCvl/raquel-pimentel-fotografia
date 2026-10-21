@@ -12,6 +12,7 @@
 }
 
 .works__lead {
+  max-width: 52ch;
   margin-top: 16px;
   font-size: clamp(1.125rem, 1.5vw, 1.375rem);
   font-weight: 400;
