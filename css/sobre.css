@@ -1,6 +1,6 @@
 /* ============ SOBRE ============ */
 .about {
-  padding-block: clamp(56px, 7vw, 104px) clamp(96px, 11vw, 160px);
+  padding-block: clamp(48px, 5vw, 72px) clamp(64px, 7vw, 104px);
   background: var(--cream);
 }
 

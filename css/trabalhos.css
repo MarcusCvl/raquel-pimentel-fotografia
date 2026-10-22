@@ -1,9 +1,9 @@
 /* ============ TRABALHOS ============ */
 .works {
-  padding-top: clamp(88px, 11vw, 150px);
+  padding-top: clamp(56px, 7vw, 96px);
 }
 
-.works__intro { margin-bottom: clamp(56px, 7vw, 96px); }
+.works__intro { margin-bottom: clamp(32px, 4vw, 56px); }
 
 .works__title {
   margin-top: 18px;
@@ -24,7 +24,7 @@
   --h: 440px;
   --gap: 20px;
   position: relative;
-  padding-block: clamp(40px, 5vw, 64px);
+  padding-block: clamp(32px, 4vw, 48px);
 }
 /* linha divisória respeitando a margem lateral */
 .gallery + .gallery::before {
@@ -188,7 +188,7 @@
 /* ---------- Pausa: fotografia de impacto, de ponta a ponta ---------- */
 .pause {
   height: clamp(440px, 86svh, 860px);
-  margin-block: clamp(40px, 6vw, 80px);
+  margin-block: clamp(32px, 4vw, 48px);
   overflow: hidden;
 }
 .pause img {

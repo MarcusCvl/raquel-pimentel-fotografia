@@ -2,7 +2,7 @@
 .quote {
   background: var(--navy);
   color: var(--cream);
-  padding-block: clamp(96px, 12vw, 168px) clamp(80px, 10vw, 128px);
+  padding-block: clamp(64px, 8vw, 112px) clamp(56px, 7vw, 96px);
 }
 
 .quote__inner {
