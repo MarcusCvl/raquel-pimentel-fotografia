@@ -191,10 +191,12 @@
   margin-block: clamp(32px, 4vw, 48px);
   overflow: hidden;
 }
+.pause picture { height: 100%; }
 .pause img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: 50% 45%; /* mãos dos noivos no centro */
 }
 .shot__ph--pause {
   border: 0;
@@ -278,5 +280,6 @@
   .shot { max-width: 86vw; }
 
   .pause { height: min(118vw, 640px); }
+  .pause img { object-position: 50% 35%; }
 
 }

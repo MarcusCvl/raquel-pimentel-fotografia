@@ -401,7 +401,17 @@
 
       <!-- Pausa: uma única fotografia de impacto, sem texto (usar só uma vez) -->
       <figure class="pause reveal" aria-label="Fotografia em destaque">
-        <div class="shot__ph shot__ph--pause">Fotografia de destaque</div>
+        <picture>
+          <!-- celular e tablet: foto vertical inteira; desktop: recorte horizontal nas mãos -->
+          <source media="(max-width: 1199px)" type="image/webp"
+                  srcset="assets/img/portfolio/casamento-maos-640.webp 640w, assets/img/portfolio/casamento-maos-1000.webp 1000w" sizes="100vw">
+          <source media="(max-width: 1199px)"
+                  srcset="assets/img/portfolio/casamento-maos-640.jpg 640w, assets/img/portfolio/casamento-maos-1000.jpg 1000w" sizes="100vw">
+          <source type="image/webp" srcset="assets/img/portfolio/casamento-maos-destaque-1000.webp">
+          <img src="assets/img/portfolio/casamento-maos-destaque-1000.jpg" width="1000" height="540"
+               loading="lazy" decoding="async"
+               alt="Em preto e branco, as mãos dos noivos entrelaçadas sobre o genuflexório, com a renda do vestido da noiva ao lado">
+        </picture>
       </figure>
     </section>
 
